@@ -14,7 +14,7 @@ async def test_generate_token(
     data = LinkModel(target_url=test_url).model_dump()
     data["target_url"] = str(data["target_url"])
     response = await api_client.post(
-        "/new/shorten/",
+        "/shorten/",
         json=data,
     )
     assert response.status_code == fastapi.status.HTTP_201_CREATED
@@ -34,14 +34,14 @@ async def test_redirect(
     data = LinkModel(target_url=test_url).model_dump()
     data["target_url"] = str(data["target_url"])
     response = await api_client.post(
-        "/new/shorten/",
+        "/shorten/",
         json=data,
     )
     assert response.status_code == fastapi.status.HTTP_201_CREATED
     response = LinkWithShortenModel.model_validate_json(response.content)
 
     redirect_response = await api_client.get(
-        f"/new/{response.token}/",
+        f"/link/{response.token}/",
     )
     assert (
         redirect_response.status_code

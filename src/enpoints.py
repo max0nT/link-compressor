@@ -5,7 +5,7 @@ from src import entities, repo
 
 from src.short_url import generate_short_link, get_url_by_link
 
-router = fastapi.APIRouter(prefix="/new", tags=["Link"])
+router = fastapi.APIRouter(prefix="", tags=["Link"])
 
 
 @router.post(
@@ -25,7 +25,7 @@ async def shorten(
 
 
 @router.get(
-    path="/{token}/",
+    path="/link/{token}/",
     status_code=fastapi.status.HTTP_308_PERMANENT_REDIRECT,
 )
 async def redirect_by_token(
