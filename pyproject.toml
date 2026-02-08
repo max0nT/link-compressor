@@ -8,7 +8,7 @@ dependencies = [
     # Framework to create backend apps
     # https://fastapi.tiangolo.com/
     "fastapi>=0.128.4",
-
+    
     # ASGI to run python backend apps
     # https://github.com/Kludex/uvicorn
     "uvicorn>=0.40.0",
@@ -17,8 +17,13 @@ dependencies = [
     # https://docs.pydantic.dev/
     "pydantic>=2.12.5",
 
-    # http://github.com/ellisonleao/pyshorteners/
-    "pyshorteners @ git+https://github.com/ellisonleao/pyshorteners/@main",
+    # Pydantic extension for setting management
+    # https://github.com/pydantic/pydantic-settings
+    "pydantic-settings>=2.12.0",
+
+    # Simple extension to generate short uuid for url
+    # https://github.com/skorokithakis/shortuuid
+    "shortuuid @ git+https://github.com/skorokithakis/shortuuid/@master",
 ]
 [dependency-groups]
 dev = [
