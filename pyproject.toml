@@ -1,0 +1,45 @@
+[project]
+name = "link-compressor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Framework to create backend apps
+    # https://fastapi.tiangolo.com/
+    "fastapi>=0.128.4",
+
+    # ASGI to run python backend apps
+    # https://github.com/Kludex/uvicorn
+    "uvicorn>=0.40.0",
+
+    # Management data and their validation
+    # https://docs.pydantic.dev/
+    "pydantic>=2.12.5",
+
+    # http://github.com/ellisonleao/pyshorteners/
+    "pyshorteners @ git+https://github.com/ellisonleao/pyshorteners/@main",
+]
+[dependency-groups]
+dev = [
+    # Make shorts commands
+    # https://github.com/pyinvoke/invocations
+    "invocations>=4.0.2",
+
+    # Allows to debug python code
+    # https://github.com/gotcha/ipdb
+    "ipdb>=0.13.13",
+]
+test = [
+    # Allows to make request for api testing
+    # https://www.python-httpx.org/
+    "httpx>=0.28.1",
+
+    # Framework for python code testing
+    # https://docs.pytest.org/en/stable/
+    "pytest>=9.0.2",
+
+    # Extension to make async tests
+    # https://pypi.org/project/pytest-asyncio/
+    "pytest-asyncio>=1.3.0",
+]
