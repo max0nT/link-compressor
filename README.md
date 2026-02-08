@@ -28,3 +28,9 @@ inv db.init
 ```bash
 inv app.run
 ```
+
+### Run tests
+
+```bash
+inv tests.run
+```

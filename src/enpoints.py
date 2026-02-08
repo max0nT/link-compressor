@@ -21,7 +21,7 @@ async def shorten(
     data: entities.LinkModel,
 ) -> entities.LinkWithShortenModel:
     """Generate shorten link."""
-    return generate_short_link(url=data.target_link, link_repo=link_repo)
+    return generate_short_link(url=data.target_url, link_repo=link_repo)
 
 
 @router.get(

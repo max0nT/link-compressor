@@ -4,7 +4,7 @@ import pydantic.networks
 class LinkModel(pydantic.BaseModel):
     """Pydantic class to describe url data for shorting."""
 
-    target_link: pydantic.networks.HttpUrl
+    target_url: pydantic.networks.HttpUrl
 
 
 class LinkWithShortenModel(LinkModel):

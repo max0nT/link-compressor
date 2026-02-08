@@ -8,19 +8,15 @@ dependencies = [
     # Framework to create backend apps
     # https://fastapi.tiangolo.com/
     "fastapi==0.128.0",
-
     # ASGI to run python backend apps
     # https://github.com/Kludex/uvicorn
     "uvicorn>=0.40.0",
-
     # Management data and their validation
     # https://docs.pydantic.dev/
     "pydantic>=2.12.5",
-
     # Pydantic extension for setting management
     # https://github.com/pydantic/pydantic-settings
     "pydantic-settings>=2.12.0",
-
     # Simple extension to generate short uuid for url
     # https://github.com/skorokithakis/shortuuid
     "shortuuid @ git+https://github.com/skorokithakis/shortuuid/@master",
@@ -47,4 +43,23 @@ test = [
     # Extension to make async tests
     # https://pypi.org/project/pytest-asyncio/
     "pytest-asyncio>=1.3.0",
+
+    # Pytest extension for patching objects during testing
+    # https://pytest-mock.readthedocs.io/en/latest/
+    "pytest-mock>=3.15.1",
 ]
+
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+    "src"
+]
+addopts = [
+    "--asyncio-mode=auto",
+    "--ff",
+    "-vv",
+    "--cache-clear",
+    "-s"
+]
+asyncio_default_test_loop_scope = "session"

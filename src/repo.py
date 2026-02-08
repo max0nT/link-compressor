@@ -15,7 +15,7 @@ class LinkRepository:
             cursor = conn.cursor()
             cursor.execute(
                 "INSERT INTO short_links (full_url, token) VALUES (?, ?)",
-                (str(data.target_link), data.token)
+                (str(data.target_url), data.token)
             )
             conn.commit()
 
